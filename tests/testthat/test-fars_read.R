@@ -1,0 +1,6 @@
+context("fars_read")
+suppressWarnings(library(readr))
+fars_2013 <- read_csv("./inst/extdata/accident_2013.csv.bz2")
+expect_true(is.data.frame(fars_2013))
+expect_true(nrow(fars_2013) > 0)
+expect_true(ncol(fars_2013) > 0)

@@ -1,9 +1,12 @@
+suppressWarnings(library(maps))
+suppressWarnings(library(readr))
+suppressWarnings(library(testthat))
 #' \code{farsPackage} package
 #'
 #' FARS Package
 #'
 #' @docType package
-#' @name farsPackage
+#' @name FARS
 #' @importFrom dplyr %>%
 #' @import testthat
 NULL
@@ -55,7 +58,7 @@ fars_read <- function(filename) {
 #' @export
 make_filename <- function(year) {
         year <- as.integer(year)
-        sprintf("accident_%d.csv.bz2", year)
+        sprintf("./inst/extdata/accident_%d.csv.bz2", year)
 }
 
 #' Reads data from FARS file for different years to create month-year view
